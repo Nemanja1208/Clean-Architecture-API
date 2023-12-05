@@ -1,9 +1,10 @@
-﻿using Domain.Models;
+﻿using Application.Dtos.MediatR;
+using Domain.Models;
 using MediatR;
 
 namespace Application.Queries.Dogs.GetById
 {
-    public class GetDogByIdQuery : IRequest<Dog>
+    public class GetDogByIdQuery : IRequest<OperationResult<Dog>>
     {
         public GetDogByIdQuery(Guid dogId)
         {

@@ -28,4 +28,4 @@ namespace Application.Queries.Users.Login
         }
     }
 }
-   
+

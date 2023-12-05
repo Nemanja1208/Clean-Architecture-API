@@ -1,6 +1,5 @@
 ﻿using Domain.Models.User;
 using FluentValidation;
-using Infrastructure.Database.MySQLDatabase;
 using Infrastructure.Repositories.Users;
 
 

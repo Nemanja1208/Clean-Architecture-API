@@ -1,8 +1,6 @@
 ﻿using Application.Exceptions;
 using Application.Validators.User;
 using Domain.Models.User;
-using Infrastructure.Database;
-using Infrastructure.Database.MySQLDatabase;
 using Infrastructure.Repositories.Users;
 using MediatR;
 namespace Application.Commands.Users.Register

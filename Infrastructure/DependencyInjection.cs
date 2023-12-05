@@ -2,6 +2,7 @@
 using Infrastructure.Database.DatabaseHelpers;
 using Infrastructure.Database.MySQLDatabase;
 using Infrastructure.Repositories.Authorization;
+using Infrastructure.Repositories.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,8 @@ namespace Infrastructure
         {
             services.AddSingleton<MockDatabase>();
             services.AddScoped<AuthRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
 
             services.AddDbContext<RealDatabase>(options =>
             {

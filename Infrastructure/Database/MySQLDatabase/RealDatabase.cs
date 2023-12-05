@@ -15,8 +15,8 @@ namespace Infrastructure.Database.MySQLDatabase
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string hidden = "\"Server=NM-FRONTEDGE\\\\SQLEXPRESS; Database=api_project_db; Trusted_Connection=true; TrustServerCertificate=true;\""
-            optionsBuilder.UseSqlServer(hidden).AddInterceptors(new CommandLoggingInterceptor());
+            //string hidden = \"Server=NM-FRONTEDGE\\\\SQLEXPRESS; Database=api_project_db; Trusted_Connection=true; TrustServerCertificate=true;\";
+            optionsBuilder.UseSqlServer("Server=NM-FRONTEDGE\\SQLEXPRESS; Database=api_project_db; Trusted_Connection=true; TrustServerCertificate=true;").AddInterceptors(new CommandLoggingInterceptor());
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

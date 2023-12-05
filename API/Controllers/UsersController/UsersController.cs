@@ -5,6 +5,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Application.Validators.User;
 using Application.Dtos.Errors;
+using Application.Exceptions.Authorize;
 
 namespace API.Controllers.UsersController
 {
@@ -23,7 +24,7 @@ namespace API.Controllers.UsersController
 
         [HttpPost("register")]
         [ProducesResponseType(typeof(UserCredentialsDto), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(Errors),StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(Errors), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Register([FromBody] UserCredentialsDto userToRegister)
         {
             var inputValidation = _userValidator.Validate(userToRegister);
@@ -64,9 +65,9 @@ namespace API.Controllers.UsersController
 
                 return Ok(new TokenDto { TokenValue = token });
             }
-            catch (UnauthorizedAccessException ex)
+            catch (UnAuthorizedException ex)
             {
-                return Unauthorized(new { ex.Message });
+                return BadRequest(ex.Message);
             }
         }
     }

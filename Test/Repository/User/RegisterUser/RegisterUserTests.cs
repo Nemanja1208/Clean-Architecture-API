@@ -24,7 +24,7 @@ namespace Test.Repository.User.RegisterUser
         public async Task RegisterUser_Success()
         {
             // Arrange
-            var userToRegister = new UserModel() { Id = Guid.NewGuid(), UserName = "Necika2221!", UserPassword = "pASSWROD12343"};
+            var userToRegister = new UserModel() { Id = Guid.NewGuid(), UserName = "Necika2221!", UserPassword = "pASSWROD12343" };
 
             // Act
             var registeredUser = await _userRepository.RegisterUser(userToRegister);
