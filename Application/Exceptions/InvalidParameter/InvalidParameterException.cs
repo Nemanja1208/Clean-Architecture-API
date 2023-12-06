@@ -3,7 +3,7 @@
     public class InvalidParameterException : BaseCustomException
     {
         public InvalidParameterException(string parameterName)
-            : base($"Invalid parameter \"{parameterName}\".")
+            : base($"Invalid parameter {parameterName}.")
         {
         }
     }

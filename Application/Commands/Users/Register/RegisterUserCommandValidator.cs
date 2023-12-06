@@ -19,7 +19,7 @@ namespace Application.Commands.Users.Register
 
         private bool BeUniqueUsername(string username)
         {
-            // Check if the username is unique in the mock database
+            // Check if the username is unique in the database
             List<UserModel> allUsersFromDb = _userRepository.GetAllUsers().Result;
             return !allUsersFromDb.Any(user => user.UserName == username);
         }
