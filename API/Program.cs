@@ -33,7 +33,6 @@ builder.Services.AddApplication().AddInfrastructure(secretConnectionString);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

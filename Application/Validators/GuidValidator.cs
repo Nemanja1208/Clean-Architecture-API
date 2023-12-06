@@ -2,7 +2,7 @@
 
 namespace Application.Validators
 {
-    public class GuidValidator: AbstractValidator<Guid>
+    public class GuidValidator : AbstractValidator<Guid>
     {
         public GuidValidator()
         {

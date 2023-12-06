@@ -48,7 +48,7 @@ namespace API.Controllers.DogsController
             {
                 return BadRequest(ex.Message);
             }
-            
+
         }
 
         // Create a new dog 
@@ -62,7 +62,7 @@ namespace API.Controllers.DogsController
             var validatedDog = _dogValidator.Validate(newDog);
 
             // Error handling
-            if(!validatedDog.IsValid)
+            if (!validatedDog.IsValid)
             {
                 return BadRequest(validatedDog.Errors.ConvertAll(errors => errors.ErrorMessage));
             }
