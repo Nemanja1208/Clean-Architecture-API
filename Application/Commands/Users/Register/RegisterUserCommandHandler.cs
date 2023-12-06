@@ -27,6 +27,7 @@ namespace Application.Commands.Users.Register
                 throw new ArgumentException("Registration error: " + string.Join("; ", allErrors));
             }
 
+            // Here can we use something called AutoMapper, helps us convert Dtos to Domain Models...
             var userToCreate = new UserModel
             {
                 Id = Guid.NewGuid(),

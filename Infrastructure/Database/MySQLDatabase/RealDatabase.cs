@@ -13,10 +13,10 @@ namespace Infrastructure.Database.MySQLDatabase
         public virtual DbSet<UserModel> Users { get; set; }
         public virtual DbSet<Dog> Dogs { get; set; }
 
+        // Do not really know why I have to keep this safe guard here but hell... Let it be until we find out why...
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //string hidden = \"Server=NM-FRONTEDGE\\\\SQLEXPRESS; Database=api_project_db; Trusted_Connection=true; TrustServerCertificate=true;\";
-            optionsBuilder.UseSqlServer("Server=NM-FRONTEDGE\\SQLEXPRESS; Database=api_project_db; Trusted_Connection=true; TrustServerCertificate=true;").AddInterceptors(new CommandLoggingInterceptor());
+            optionsBuilder.UseSqlServer("connectionString");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
