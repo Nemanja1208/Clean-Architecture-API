@@ -1,8 +1,6 @@
 ﻿using Domain.Models.User;
 using Infrastructure.Database.MySQLDatabase;
 using Infrastructure.Repositories.Users;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Moq;
 
 namespace Test.Repository.User.RegisterUser
